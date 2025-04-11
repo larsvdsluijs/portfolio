@@ -1,0 +1,534 @@
+/* Reset and base styles */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+/* Left Section */
+.left-section {
+  flex: 1;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .left-section {
+    width: 50%;
+    height: 100vh;
+  }
+}
+
+.logo {
+  margin-bottom: 5rem;
+}
+
+.intro-content {
+  margin-top: 8rem;
+  margin-bottom: auto;
+}
+
+.intro-text {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  color: #909090;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.social-icon {
+  background-color: #c4c4c4;
+  padding: 0.75rem;
+  border-radius: 0.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #909090;
+}
+
+/* Right Section */
+.right-section {
+  flex: 1;
+  background-color: #000;
+  position: relative;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .right-section {
+    width: 50%;
+    height: 100vh;
+  }
+}
+
+.navigation {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #d7d7d7;
+}
+
+.contact-button {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #d7d7d7;
+}
+
+.profile-image-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  padding: 2rem;
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 1/1;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navigation {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .name {
+    font-size: 3rem;
+  }
+  
+  .intro-text, .job-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    justify-content: center;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+  }
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.left-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+.right-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(0deg,rgba(0, 78, 194, 1) 0%, rgba(224, 0, 0, 1) 100%);  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  color: #000;
+
+  .logo {
+    margin-bottom: 3rem;
+    animation: fadeIn 0.8s ease-out forwards;
+    img {
+      height: 60px;
+    }
+  }
+
+  .intro-content {
+    margin-bottom: 2rem;
+    max-width: 700px;
+
+    .intro-text {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+
+    .name {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeIn 0.8s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+
+    .job-title {
+      font-size: 1.5rem;
+      color: #666;
+      animation: fadeIn 0.8s ease-out 0.6s forwards;
+      opacity: 0;
+    }
+  }
+
+  .description {
+    margin-bottom: 3rem;
+    max-width: 700px;
+    animation: fadeIn 0.8s ease-out 0.8s forwards;
+    opacity: 0;
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #666;
+    }
+  }
+
+  .social-icons {
+    position: fixed;
+    bottom: 4rem;
+    left: 4rem;
+    display: flex;
+    gap: 1.5rem;
+    z-index: 10;
+    animation: fadeIn 0.8s ease-out 1.2s forwards;
+    opacity: 0;
+
+    .social-icon {
+      color: #000;
+      transition: color 0.3s ease;
+      width: 32px;
+      height: 32px;
+
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+
+  .navigation {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    animation: fadeIn 0.8s ease-out 1s forwards;
+    opacity: 0;
+
+    .nav-link {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #666;
+      }
+    }
+
+    .contact-button {
+      background-color: #000;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
+
+  .profile-image-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 80%;
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/* Desktop */
+@media (min-width: 1201px) {
+  .home-container {
+    height: 100vh;
+  }
+}
+
+/* Tablet and Mobile */
+@media (max-width: 1200px) {
+  .home-container {
+    height: auto;
+  }
+
+  .left-bg {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .right-bg {
+    width: 100%;
+    height: 40vh;
+    top: 60vh;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    transform: none;
+  }
+
+  .content {
+    min-height: 60vh;
+    padding: 2rem 4rem;
+
+    .profile-image-container {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+      margin-top: 2rem;
+      transform: none;
+      top: auto;
+      right: auto;
+
+      .profile-image {
+        width: 300px;
+        height: 300px;
+        max-width: 100%;
+        max-height: none;
+      }
+    }
+
+    .navigation {
+      position: static;
+      margin: 2rem 0;
+      justify-content: flex-start;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .content {
+    padding: 2rem;
+    text-align: center;
+
+    .logo {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .intro-content {
+      margin: 0 auto 2rem;
+      max-width: 100%;
+
+      .intro-text {
+        font-size: 1.4rem;
+      }
+
+      .name {
+        font-size: 3rem;
+      }
+
+      .job-title {
+        font-size: 1.2rem;
+      }
+    }
+
+    .navigation {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .social-icons {
+      left: 2rem;
+      bottom: 2rem;
+    }
+
+    .description {
+      margin: 0 auto 2rem;
+      max-width: 100%;
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    .profile-image-container {
+      .profile-image {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .content {
+    padding: 1.5rem;
+
+    .logo img {
+      height: 50px;
+    }
+
+    .intro-content {
+      .intro-text {
+        font-size: 1.3rem;
+      }
+
+      .name {
+        font-size: 2.5rem;
+      }
+
+      .job-title {
+        font-size: 1.1rem;
+      }
+    }
+
+    .navigation {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      left: 1.5rem;
+      bottom: 1.5rem;
+      gap: 1rem;
+    }
+
+    .description {
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .profile-image-container {
+      .profile-image {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}
