@@ -1,16 +1,19 @@
-name: Deploy Angular app to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # or 'master', if that's your default
+
+permissions:
+  contents: write  # this is important for GITHUB_TOKEN to push
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -21,11 +24,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Angular app
-        run: npm run build
+      - name: Build Angular project
+        run: npm run build -- --configuration production
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist/portfolio
+          token: ${{ secrets.SECRET_TOKEN }}
