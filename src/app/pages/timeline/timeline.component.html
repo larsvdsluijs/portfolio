@@ -1,0 +1,42 @@
+<body>
+    <div class="container">
+      <section class="about-section">
+        <h1>About Me</h1>
+        <div class="about-content">
+          <p class="about-text">
+            I am a passionate software developer currently pursuing a degree in Software Engineering at the Amsterdam University of Applied Sciences. 
+            My journey in tech began with a strong interest in creating user-friendly applications, and I've developed a particular focus on full-stack development, 
+            with a slight preference for frontend work. I love crafting intuitive interfaces and solving complex problems through clean, maintainable code.
+          </p>
+          <p class="about-text">
+            Beyond my studies, I actively explore new technologies and frameworks, always seeking to expand my knowledge and skills. 
+            I believe in continuous learning and the power of collaboration within the tech community. 
+            Whether it's building responsive web applications or diving into the latest frontend frameworks, 
+            I'm constantly pushing myself to create better, more accessible digital experiences.
+          </p>
+        </div>
+      </section>
+
+      <h1>Experience</h1>
+      
+      <div class="timeline">
+        <!-- Verticale lijn -->
+        <div class="timeline-line"></div>
+        
+        <!-- Tijdlijn items -->
+        <div class="timeline-item" [class.left]="item.position === 'left'" [class.right]="item.position === 'right'" *ngFor="let item of timelineItems">
+          <div class="timeline-dot">
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div class="timeline-period">
+                <span>{{ item.period }}</span>
+              </div>
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <p class="timeline-description">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

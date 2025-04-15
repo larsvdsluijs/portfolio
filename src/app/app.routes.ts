@@ -23,6 +23,14 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
   },
   {
+    path: 'timeline',
+    loadComponent: () => import('./pages/timeline/timeline.component').then(m => m.TimelineComponent)
+  },
+  {
+    path: 'skills',
+    loadComponent: () => import('./pages/skills/skills.component').then(m => m.SkillsComponent)
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

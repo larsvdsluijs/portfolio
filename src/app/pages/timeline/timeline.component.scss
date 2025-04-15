@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  /* Subtiele achtergrond met lichte gradient en patroon */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background-image: 
+    linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%),
+    repeating-linear-gradient(45deg, rgba(0, 78, 194, 0.03) 0px, rgba(0, 78, 194, 0.03) 1px, transparent 1px, transparent 10px),
+    repeating-linear-gradient(135deg, rgba(224, 0, 0, 0.03) 0px, rgba(224, 0, 0, 0.03) 1px, transparent 1px, transparent 10px);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 3rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(0, 78, 194, 1) 0%, rgba(224, 0, 0, 1) 100%);
+  border-radius: 3px;
+}
+
+/* Tijdlijn container */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Verticale lijn met gradient */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 78, 194, 1) 0%, rgba(224, 0, 0, 1) 100%);
+  border-radius: 4px;
+  z-index: 1;
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(0, 78, 194, 0.3);
+}
+
+/* Tijdlijn items */
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem;
+  width: 100%;
+  display: flex;
+}
+
+/* Links en rechts positionering */
+.timeline-item.left {
+  justify-content: flex-start;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+/* Tijdlijn punt (dot) met gradient */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(0deg, rgba(0, 78, 194, 1) 0%, rgba(224, 0, 0, 1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(0, 78, 194, 0.5);
+  border: 3px solid white;
+}
+
+.timeline-dot i {
+  color: white;
+  font-size: 1rem;
+}
+
+/* Tijdlijn kaart - nu zonder clip-path en met subtielere styling */
+.timeline-card {
+  width: calc(50% - 3rem);
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 0.5s forwards;
+  animation-delay: calc(var(--animation-order, 0) * 0.2s);
+  border-top: 4px solid transparent;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(90deg, rgba(0, 78, 194, 1), rgba(224, 0, 0, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.timeline-item.right .timeline-card {
+  transform: translateX(50px);
+}
+
+/* Animatie voor het insliden */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zet animatie volgorde voor elk item */
+.timeline-item:nth-child(1) .timeline-card {
+  --animation-order: 1;
+}
+
+.timeline-item:nth-child(2) .timeline-card {
+  --animation-order: 2;
+}
+
+.timeline-item:nth-child(3) .timeline-card {
+  --animation-order: 3;
+}
+
+.timeline-item:nth-child(4) .timeline-card {
+  --animation-order: 4;
+}
+
+.timeline-item:nth-child(5) .timeline-card {
+  --animation-order: 5;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Kaart header */
+.timeline-card-header {
+  padding: 1.5rem 1.5rem 0.5rem;
+  position: relative;
+}
+
+/* Periode met gradient accent - nu als block element zonder halve cirkel */
+.timeline-period {
+  display: block; /* Veranderd van inline-flex naar block */
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+  background: rgba(0, 78, 194, 0.05);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  /* border-left verwijderd */
+  font-weight: 600;
+  text-align: center;
+  width: fit-content;
+}
+
+.timeline-period i {
+  font-size: 0.875rem;
+  color: rgba(224, 0, 0, 0.8);
+  margin-right: 0.3rem;
+}
+
+/* Titel met standaard gradient kleur - nu als block element */
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: block; /* Veranderd van inline-block naar block */
+  background: linear-gradient(90deg, rgba(0, 78, 194, 1) 0%, rgba(224, 0, 0, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Beschrijving */
+.timeline-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Kaart content */
+.timeline-card-content {
+  padding: 0.5rem 1.5rem 1.5rem;
+  background-color: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+.timeline-card-content h4 {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.timeline-card-content ul {
+  list-style-position: outside;
+  padding-left: 1.5rem;
+}
+
+.timeline-card-content li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+  position: relative;
+}
+
+.timeline-card-content li::marker {
+  color: rgba(0, 78, 194, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 1rem;
+  }
+  
+  .timeline-dot {
+    left: 1rem;
+  }
+  
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: flex-end;
+  }
+  
+  .timeline-card {
+    width: calc(100% - 3rem);
+    margin-left: 3rem;
+  }
+  
+  .timeline-item.left .timeline-card,
+  .timeline-item.right .timeline-card {
+    transform: translateX(50px);
+  }
+}
+
+.about-section {
+  margin-bottom: 4rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1rem;
+
+    .about-text {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      text-align: center;
+    }
+  }
+}

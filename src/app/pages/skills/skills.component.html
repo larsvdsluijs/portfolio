@@ -1,0 +1,47 @@
+<div class="skills-container">
+    <h1>My Skills</h1>
+    
+    <!-- Frontend Skills Section -->
+    <section class="skills-section">
+      <h2 class="section-title">Frontend Development</h2>
+      <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of frontendSkills">
+          <img [src]="skill.image" [alt]="skill.name" class="skill-image">
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Backend Skills Section -->
+    <section class="skills-section">
+      <h2 class="section-title">Backend Development</h2>
+      <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of backendSkills">
+          <img [src]="skill.image" [alt]="skill.name" class="skill-image">
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Database Skills Section -->
+    <section class="skills-section">
+      <h2 class="section-title">Databases</h2>
+      <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of databaseSkills">
+          <img [src]="skill.image" [alt]="skill.name" class="skill-image">
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Languages Section -->
+    <section class="skills-section">
+      <h2 class="section-title">Languages</h2>
+      <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of languageSkills">
+          <img [src]="skill.image" [alt]="skill.name" class="skill-image">
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
+      </div>
+    </section>
+  </div>
