@@ -47,7 +47,6 @@ export class SkillsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // Filter skills by category
     this.frontendSkills = this.skills.filter(skill => skill.category === 'frontend');
     this.backendSkills = this.skills.filter(skill => skill.category === 'backend');
     this.databaseSkills = this.skills.filter(skill => skill.category === 'database');
