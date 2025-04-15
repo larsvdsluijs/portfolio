@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href 'https://larsvdsluijs.github.io/portfolio/'",
     "watch": "ng build --watch --configuration development",
+    "deploy": "npx angular-cli-ghpages --dir=dist/portfolio",
     "test": "ng test"
   },
   "private": true,
