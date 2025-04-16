@@ -20,6 +20,14 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
+      title: 'Hitster app',
+      description: 'An online app form of the card game Hitster.',
+      image: 'assets/img/projects/hitster_app.png',
+      tags: ['Angular', 'TypeScript'],
+      githubLink: '',
+      demoLink: 'https://kvatlantis.nl/beheer/hitster/'
+    },
+    {
       title: 'Tic Tac Toe app',
       description: 'A simple Tic Tac Toe game built with Angular and TypeScript.',
       image: 'assets/img/projects/tictactoe_app.png',

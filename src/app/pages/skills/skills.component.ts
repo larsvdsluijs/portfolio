@@ -17,25 +17,25 @@ interface Skill {
 export class SkillsComponent implements OnInit {
   skills: Skill[] = [
     // Frontend skills
-    { name: 'HTML', image: 'assets/img/placeholder.png', category: 'frontend' },
-    { name: 'CSS', image: 'assets/img/placeholder.png', category: 'frontend' },
-    { name: 'JavaScript', image: 'assets/img/placeholder.png', category: 'frontend' },
-    { name: 'TypeScript', image: 'assets/img/placeholder.png', category: 'frontend' },
-    { name: 'Angular', image: 'assets/img/placeholder.png', category: 'frontend' },
-    { name: 'Vue', image: 'assets/img/placeholder.png', category: 'frontend' },
+    { name: 'HTML', image: 'assets/img/skills/html-removebg-preview.png', category: 'frontend' },
+    { name: 'CSS', image: 'assets/img/skills/css-removebg-preview.png', category: 'frontend' },
+    { name: 'JavaScript', image: 'assets/img/skills/javascript-removebg-preview.png', category: 'frontend' },
+    { name: 'TypeScript', image: 'assets/img/skills/typescript-removebg-preview.png', category: 'frontend' },
+    { name: 'Angular', image: 'assets/img/skills/angular-removebg-preview.png', category: 'frontend' },
+    { name: 'Vue', image: 'assets/img/skills/vue-removebg-preview.png', category: 'frontend' },
     
     // Backend skills
-    { name: 'Springboot', image: 'assets/img/placeholder.png', category: 'backend' },
-    { name: 'ASP.NET', image: 'assets/img/placeholder.png', category: 'backend' },
-    { name: 'PHP', image: 'assets/img/placeholder.png', category: 'backend' },
+    { name: 'Springboot', image: 'assets/img/skills/springboot-removebg-preview.png', category: 'backend' },
+    { name: 'ASP.NET', image: 'assets/img/skills/asp-removebg-preview.png', category: 'backend' },
+    { name: 'PHP', image: 'assets/img/skills/php-removebg-preview.png', category: 'backend' },
     
     // Database skills
-    { name: 'MySQL', image: 'assets/img/placeholder.png', category: 'database' },
-    { name: 'MongoDB', image: 'assets/img/placeholder.png', category: 'database' },
+    { name: 'MySQL', image: 'assets/img/skills/mysql-removebg-preview.png', category: 'database' },
+    { name: 'MongoDB', image: 'assets/img/skills/mongodb-removebg-preview.png', category: 'database' },
     
     // Languages
-    { name: 'Dutch', image: 'assets/img/placeholder.png', category: 'language' },
-    { name: 'English', image: 'assets/img/placeholder.png', category: 'language' }
+    { name: 'Dutch', image: 'assets/img/skills/dutch-removebg-preview.png', category: 'language' },
+    { name: 'English', image: 'assets/img/skills/english-removebg-preview.png', category: 'language' }
   ];
 
   // Categorized skills
