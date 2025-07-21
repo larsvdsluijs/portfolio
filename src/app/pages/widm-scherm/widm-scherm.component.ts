@@ -46,7 +46,7 @@ export class WidmSchermComponent implements OnInit, OnDestroy {
       case 'red':
         return 'assets/img/widm/red-screen.png';
       default:
-        return 'assets/img/placeholder.png';
+        return 'assets/img/widm/default-screen.webp';
     }
   }
 
