@@ -1,0 +1,28 @@
+<div class="widm-container">
+  <div class="button-group">
+    <button 
+      class="button green-button" 
+      [class.active]="selectedButton === 'green'"
+      (click)="selectButton('green')">
+      Groen scherm
+    </button>
+    
+    <button 
+      class="button default-button" 
+      [class.active]="selectedButton === 'default'"
+      (click)="selectButton('default')">
+      Standaard scherm
+    </button>
+    
+    <button 
+      class="button red-button" 
+      [class.active]="selectedButton === 'red'"
+      (click)="selectButton('red')">
+      Rood scherm
+    </button>
+  </div>
+  
+  <div class="status" *ngIf="selectedButton">
+    <p>Geselecteerd: <strong>{{ getSelectedText() }}</strong></p>
+  </div>
+</div> 

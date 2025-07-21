@@ -31,6 +31,14 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/skills/skills.component').then(m => m.SkillsComponent)
   },
   {
+    path: 'widm-knoppen',
+    loadComponent: () => import('./pages/widm-knoppen/widm-knoppen.component').then(m => m.WidmKnoppenComponent)
+  },
+  {
+    path: 'widm-scherm',
+    loadComponent: () => import('./pages/widm-scherm/widm-scherm.component').then(m => m.WidmSchermComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
