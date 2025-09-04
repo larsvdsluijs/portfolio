@@ -20,6 +20,22 @@ interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
+      title: 'kvatlantis.nl',
+      description: 'By far my biggest project to date. I had the opportunity to make the new website for my korfball club. Working together with designers and other developers.', 
+      image: 'assets/img/projects/kvatlantis.png',
+      tags: ['Angular', 'TypeScript', 'PHP', 'Firebase', 'MySQL'],
+      githubLink: '',
+      demoLink: 'https://kvatlantis.nl/'
+    },
+    {
+      title: 'Clubhouse TV screen',
+      description: 'A TV screen for the clubhouse of my korfball club. It displays images and information about the club.',
+      image: 'assets/img/projects/kantine_scherm.png',
+      tags: ['Angular', 'TypeScript', 'Firebase'],
+      githubLink: '',
+      demoLink: 'https://kvatlantis.nl/beheer/screen-test/'
+    },
+    {
       title: 'Hitster app',
       description: 'An online app form of the card game Hitster.',
       image: 'assets/img/projects/hitster_app.png',
