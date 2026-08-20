@@ -1,7 +1,0 @@
-<div class="screen-container" [class]="'screen-' + (screenState.selectedScreen || 'default')">
-  <img 
-    [src]="getCurrentImageUrl()" 
-    [alt]="getScreenText()"
-    class="fullscreen-image"
-    (error)="onImageError($event)">
-</div> 
